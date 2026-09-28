@@ -1,0 +1,33 @@
+name: Add YouTube thumbnail to latest LinkedIn note
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-youtube-thumbnail.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-note:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add thumbnail and direct YouTube link
+        shell: bash
+        run: |
+          echo 'CmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKdmlkZW9fdXJsID0gImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL2xpdmUvS3Byc1djMThVNk0/dD0yMjgwcyIKdGh1bWJfdXJsID0gImh0dHBzOi8vaS55dGltZy5jb20vdmkvS3Byc1djMThVNk0vaHFkZWZhdWx0LmpwZyIKCm9sZF9wYXJhID0gJycnICAgICAgPHA+VW4gYcOxbyBtw6FzIHBhcnRpY2lww6kgZW4gbGEgPHN0cm9uZz5Ob2NoZSBFdXJvcGVhIGRlIGxvcyBJbnZlc3RpZ2Fkb3JlcyBlIEludmVzdGlnYWRvcmFzPC9zdHJvbmc+IGRlIGxhIFVuaXZlcnNpZGFkIGRlIEV4dHJlbWFkdXJhIGp1bnRvIGFsIGVxdWlwbyBkZSBDdWx0dXJhIENpZW50w61maWNhIHkgbWlzIGNvbXBhw7FlcmFzIHkgY29tcGHDsWVyb3MgZGUgPHN0cm9uZz5Ob2RvIFBsYXk8L3N0cm9uZz4uIEVzdGEgZWRpY2nDs24gYcOxYWRpw7MgdW5hIG5vdmVkYWQgZXNwZWNpYWw6IHVuIDxzdHJvbmc+cMOzZGNhc3QgZW4gZGlyZWN0bzwvc3Ryb25nPiwgY29uIHVuYSBlbnRyZXZpc3RhIHF1ZSBwZXJtaXRlIHByb2xvbmdhciBsYSBleHBlcmllbmNpYSBtw6FzIGFsbMOhIGRlbCBwcm9waW8gZXZlbnRvLiBHcmFjaWFzIGEgdG9kYXMgbGFzIGZhbWlsaWFzIHF1ZSBzZSBhY2VyY2Fyb24gYSBjb21wYXJ0aXIgbGEgdGFyZGUgY29uIG5vc290cm9zLjwvcD4nJycKCm5ld19ib2R5ID0gZicnJyAgICAgIDxkaXYgY2xhc3M9Im5vdGUtYm9keSI+PHA+VW4gYcOxbyBtw6FzIHBhcnRpY2lww6kgZW4gbGEgPHN0cm9uZz5Ob2NoZSBFdXJvcGVhIGRlIGxvcyBJbnZlc3RpZ2Fkb3JlcyBlIEludmVzdGlnYWRvcmFzPC9zdHJvbmc+IGRlIGxhIFVuaXZlcnNpZGFkIGRlIEV4dHJlbWFkdXJhIGp1bnRvIGFsIGVxdWlwbyBkZSBDdWx0dXJhIENpZW50w61maWNhIHkgbWlzIGNvbXBhw7FlcmFzIHkgY29tcGHDsWVyb3MgZGUgPHN0cm9uZz5Ob2RvIFBsYXk8L3N0cm9uZz4uIEVzdGEgZWRpY2nDs24gYcOxYWRpw7MgdW5hIG5vdmVkYWQgZXNwZWNpYWw6IHVuIDxzdHJvbmc+cMOzZGNhc3QgZW4gZGlyZWN0bzwvc3Ryb25nPiwgY29uIHVuYSBlbnRyZXZpc3RhIHF1ZSBwZXJtaXRlIHByb2xvbmdhciBsYSBleHBlcmllbmNpYSBtw6FzIGFsbMOhIGRlbCBwcm9waW8gZXZlbnRvLiBHcmFjaWFzIGEgdG9kYXMgbGFzIGZhbWlsaWFzIHF1ZSBzZSBhY2VyY2Fyb24gYSBjb21wYXJ0aXIgbGEgdGFyZGUgY29uIG5vc290cm9zLjwvcD4KICAgICAgPGEgY2xhc3M9Im5vdGUtaW1hZ2UtbGluayIgaHJlZj0ie3ZpZGVvX3VybH0iIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIiBhcmlhLWxhYmVsPSJWZXIgZW50cmV2aXN0YSBlbiBZb3VUdWJlIGRlc2RlIGVsIG1pbnV0byAzOCI+PGltZyBzcmM9Int0aHVtYl91cmx9IiBhbHQ9Ik1pbmlhdHVyYSBkZWwgdmlkZW8gZGUgbGEgZW50cmV2aXN0YSByZWFsaXphZGEgZHVyYW50ZSBsYSBOb2NoZSBFdXJvcGVhIGRlIGxvcyBJbnZlc3RpZ2Fkb3JlcyBlIEludmVzdGlnYWRvcmFzIDIwMjYiIGxvYWRpbmc9ImxhenkiIGRlY29kaW5nPSJhc3luYyI+PHNwYW4+VmVyIGVudHJldmlzdGEgwrcgMzg6MDAg4oaXPC9zcGFuPjwvYT48L2Rpdj4nJycKCm9sZF9zaG9ydCA9ICc8YSBocmVmPSJodHRwczovL2xua2QuaW4vZTRxS2l1N2UiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj5WZXIgZW50cmV2aXN0YSBlbiBZb3VUdWJlIOKGlzwvYT4nCm5ld19kaXJlY3QgPSBmJzxhIGhyZWY9Int2aWRlb191cmx9IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+VmVyIGVudHJldmlzdGEgZW4gWW91VHViZSDCtyBkZXNkZSAzODowMCDihpc8L2E+Cgpmb3IgZmlsZW5hbWUgaW4gWyJpbmRleC5odG1sIiwgInBlbnNhbWllbnRvcy5odG1sIl06CiAgICBwYXRoID0gUGF0aChmaWxlbmFtZSkKICAgIHRleHQgPSBwYXRoLnJlYWRfdGV4dChlbmNvZGluZz0idXRmLTgiKQogICAgaWYgIjc1MDkzNzI3OTAxMTQ5MDIwMTYiIG5vdCBpbiB0ZXh0OgogICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoZiJFbnRyeSBub3QgZm91bmQgaW4ge2ZpbGVuYW1lfSIpCiAgICBpZiB0aHVtYl91cmwgbm90IGluIHRleHQ6CiAgICAgICAgaWYgb2xkX3BhcmEgbm90IGluIHRleHQ6CiAgICAgICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoZiJQYXJhZ3JhcGggbm90IGZvdW5kIGluIHtmaWxlbmFtZX0iKQogICAgICAgIHRleHQgPSB0ZXh0LnJlcGxhY2Uob2xkX3BhcmEsIG5ld19ib2R5LCAxKQogICAgdGV4dCA9IHRleHQucmVwbGFjZShvbGRfc2hvcnQsIG5ld19kaXJlY3QsIDEpCiAgICBwYXRoLndyaXRlX3RleHQodGV4dCwgZW5jb2Rpbmc9InV0Zi04IikK' | base64 -d > /tmp/update_note.py
+          python /tmp/update_note.py
+      - name: Commit update and remove one-shot workflow
+        shell: bash
+        run: |
+          rm -f .github/workflows/add-youtube-thumbnail.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add YouTube thumbnail to Researchers Night reflection"
+          git push

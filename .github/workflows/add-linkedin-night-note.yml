@@ -1,0 +1,121 @@
+name: Add latest LinkedIn night note
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-linkedin-night-note.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-note:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add LinkedIn note and resolve interview link
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import html
+          import re
+          import urllib.request
+
+          activity_url = 'https://www.linkedin.com/feed/update/urn:li:activity:7509372790114902016/'
+          short_video_url = 'https://lnkd.in/e4qKiu7e'
+          final_video_url = short_video_url
+
+          try:
+              req = urllib.request.Request(short_video_url, headers={'User-Agent': 'Mozilla/5.0'})
+              with urllib.request.urlopen(req, timeout=20) as response:
+                  final_video_url = response.geturl()
+              print('Resolved interview URL:', final_video_url)
+          except Exception as exc:
+              print('Could not resolve short URL; keeping LinkedIn short link:', exc)
+
+          safe_video_url = html.escape(final_video_url, quote=True)
+          thumb_html = ''
+
+          video_id = None
+          patterns = [
+              r'youtube\.com/watch\?[^\s]*v=([A-Za-z0-9_-]{6,})',
+              r'youtu\.be/([A-Za-z0-9_-]{6,})',
+              r'youtube\.com/embed/([A-Za-z0-9_-]{6,})',
+              r'youtube\.com/shorts/([A-Za-z0-9_-]{6,})',
+          ]
+          for pattern in patterns:
+              match = re.search(pattern, final_video_url)
+              if match:
+                  video_id = match.group(1)
+                  break
+
+          if video_id:
+              thumb_path = Path('assets/images/noche-investigadores-2026-entrevista.jpg')
+              thumb_url = f'https://i.ytimg.com/vi/{video_id}/hqdefault.jpg'
+              try:
+                  req = urllib.request.Request(thumb_url, headers={'User-Agent': 'Mozilla/5.0'})
+                  with urllib.request.urlopen(req, timeout=20) as response:
+                      data = response.read()
+                  if data:
+                      thumb_path.parent.mkdir(parents=True, exist_ok=True)
+                      thumb_path.write_bytes(data)
+                      thumb_html = f'''      <a class="note-image-link" href="{safe_video_url}" target="_blank" rel="noopener" aria-label="Ver entrevista en YouTube"><img src="assets/images/noche-investigadores-2026-entrevista.jpg" alt="Miniatura de la entrevista realizada durante la Noche Europea de los Investigadores e Investigadoras 2026" loading="lazy" decoding="async"><span>Ver entrevista ↗</span></a>'''
+                      print('Saved YouTube thumbnail:', thumb_path)
+              except Exception as exc:
+                  print('Could not download YouTube thumbnail:', exc)
+
+          paragraph = ('Un año más participé en la <strong>Noche Europea de los Investigadores e Investigadoras</strong> '
+                       'de la Universidad de Extremadura junto al equipo de Cultura Científica y mis compañeras y compañeros de '
+                       '<strong>Nodo Play</strong>. Esta edición añadió una novedad especial: un <strong>pódcast en directo</strong>, '
+                       'con una entrevista que permite prolongar la experiencia más allá del propio evento. Gracias a todas las familias '
+                       'que se acercaron a compartir la tarde con nosotros.')
+
+          if thumb_html:
+              body = f'''      <div class="note-body"><p>{paragraph}</p>\n{thumb_html}</div>'''
+          else:
+              body = f'      <p>{paragraph}</p>'
+
+          article = f'''    <article class="note-card note-featured">
+      <div class="note-meta"><span>DIVULGACIÓN CIENTÍFICA · NODO PLAY</span><span>LinkedIn · 26/09/2026</span></div>
+      <h3>Volver a la Noche de las Investigadoras, esta vez con pódcast en directo</h3>
+{body}
+      <div class="note-links"><a href="{activity_url}" target="_blank" rel="noopener">Ver publicación original en LinkedIn ↗</a> <a href="{safe_video_url}" target="_blank" rel="noopener">Ver entrevista en YouTube ↗</a> <a href="https://nocheinvestigadoresuex.es/" target="_blank" rel="noopener">Web oficial de la Noche Europea de los Investigadores e Investigadoras ↗</a></div>
+    </article>
+
+'''
+
+          # Main page: insert as the newest item in ¿Qué estoy pensando?
+          index_path = Path('index.html')
+          index_text = index_path.read_text(encoding='utf-8')
+          if '7509372790114902016' not in index_text:
+              section_pos = index_text.index('<section class="cuaderno section" id="cuaderno">')
+              grid_marker = '  <div class="cuaderno-grid entry-stream">\n'
+              grid_pos = index_text.index(grid_marker, section_pos) + len(grid_marker)
+              index_text = index_text[:grid_pos] + article + index_text[grid_pos:]
+              index_path.write_text(index_text, encoding='utf-8')
+
+          # Archive page: insert as newest 2026 item
+          archive_path = Path('pensamientos.html')
+          archive_text = archive_path.read_text(encoding='utf-8')
+          if '7509372790114902016' not in archive_text:
+              marker = '<h2 class="archive-year">2026</h2><div class="cuaderno-grid">\n'
+              pos = archive_text.index(marker) + len(marker)
+              archive_text = archive_text[:pos] + article + archive_text[pos:]
+              archive_path.write_text(archive_text, encoding='utf-8')
+          PY
+
+      - name: Commit update and remove one-shot workflow
+        shell: bash
+        run: |
+          rm -f .github/workflows/add-linkedin-night-note.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add LinkedIn reflection from Researchers Night 2026"
+          git push

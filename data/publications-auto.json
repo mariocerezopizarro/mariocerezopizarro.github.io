@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-28T05:28:10.163352Z",
+  "generated_at": "2026-10-05T05:32:01.450409Z",
   "orcid": "0000-0001-8097-0573",
   "sources": {
     "OpenAlex": {
       "ok": true,
-      "count": 31
+      "count": 35
     },
     "Zenodo": {
       "ok": true,
@@ -21,6 +21,16 @@
       "doi": "10.17605/osf.io/se6jp",
       "type": "Material de investigación",
       "line": "l4",
+      "source": "OpenAlex"
+    },
+    {
+      "year": 2026,
+      "title": "Area-Moreira, M., Valverde-Berrocoso, J. y Rubia-Avi, B. (coords.) Transformación digital de la enseñanza universitaria. Analíticas académicas y escenarios de futuro Barcelona: Editorial Octaedro. Colección Horizontes Universidad, 2026",
+      "authors": "Mario Cerezo-Pizarro",
+      "venue": "Hispana",
+      "url": "http://hdl.handle.net/10201/218161",
+      "type": "Artículo científico",
+      "line": "l2",
       "source": "OpenAlex"
     },
     {
@@ -80,16 +90,16 @@
       "year": 2026,
       "title": "Transformación digital de la enseñanza universitaria. Analíticas académicas y escenarios de futuro",
       "authors": "Mario Cerezo-Pizarro",
-      "venue": "DOAJ (DOAJ: Directory of Open Access Journals)",
-      "url": "https://doaj.org/article/89192d70ebb14773ab3c3a07d2669b94",
-      "type": "Artículo científico",
+      "venue": "Educatio Siglo XXI",
+      "url": "https://revistas.um.es/educatio/article/view/704501",
+      "type": "Reseña",
       "line": "l2",
       "source": "OpenAlex"
     },
     {
       "year": 2026,
       "title": "What is a Cultural Video Game? Study of Teachers’ Perspectives on Cultural Video Games Through the CUDAEVC Questionnaire",
-      "authors": "Mario Cerezo-Pizarro; Francisco-Ignacio Revuelta-Domínguez; Jorge Guerra-Antequera",
+      "authors": "Mario Cerezo-Pizarro; Francisco Ignacio Revuelta Domínguez; Jorge Guerra Antequera",
       "venue": "Journal of Education Culture and Society, 17(1), 879–911",
       "url": "https://doi.org/10.15503/jecs2026.1.879.911",
       "doi": "10.15503/jecs2026.1.879.911",
@@ -132,6 +142,26 @@
       "repository": "Zenodo",
       "source": "Zenodo",
       "license": "cc-by-4.0"
+    },
+    {
+      "year": 2025,
+      "title": "Impacto del diseño y utilización de videojuegos culturales en Educación: Escenarios, implicaciones y posibilidades de interacción",
+      "authors": "Mario Cerezo-Pizarro",
+      "venue": "Institutional Repository University of Extremadura (University of Extremadura)",
+      "url": "http://hdl.handle.net/10662/26110",
+      "type": "Tesis",
+      "line": "l1",
+      "source": "OpenAlex"
+    },
+    {
+      "year": 2025,
+      "title": "Nuevas tecnologías aplicadas a la mejora de la práctica docente: sostenibilidad e innovación",
+      "authors": "Mario Cerezo-Pizarro",
+      "venue": "Institutional Repository University of Extremadura (University of Extremadura)",
+      "url": "https://hdl.handle.net/10662/41559",
+      "type": "Capítulo de libro",
+      "line": "l2",
+      "source": "OpenAlex"
     },
     {
       "year": 2025,
@@ -440,6 +470,16 @@
       "url": "https://doi.org/10.25145/j.qurricul.2023.36.04",
       "doi": "10.25145/j.qurricul.2023.36.04",
       "type": "Artículo científico",
+      "line": "l1",
+      "source": "OpenAlex"
+    },
+    {
+      "year": 2023,
+      "title": "FORGE OF DESTINY. Diseño de un videojuego para el tratamiento de la Desinformación",
+      "authors": "Mario Cerezo-Pizarro",
+      "venue": "Institutional Repository University of Extremadura (University of Extremadura)",
+      "url": "http://hdl.handle.net/10662/22716",
+      "type": "Capítulo de libro",
       "line": "l1",
       "source": "OpenAlex"
     },

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-05T05:32:01.450409Z",
+  "generated_at": "2026-10-12T05:31:26.486872Z",
   "orcid": "0000-0001-8097-0573",
   "sources": {
     "OpenAlex": {
       "ok": true,
-      "count": 35
+      "count": 30
     },
     "Zenodo": {
       "ok": true,
@@ -29,7 +29,7 @@
       "authors": "Mario Cerezo-Pizarro",
       "venue": "Hispana",
       "url": "http://hdl.handle.net/10201/218161",
-      "type": "Reseña",
+      "type": "Artículo científico",
       "line": "l2",
       "source": "OpenAlex"
     },
@@ -52,7 +52,7 @@
       "url": "https://doi.org/10.17605/osf.io/5wca7",
       "doi": "10.17605/osf.io/5wca7",
       "type": "Material de investigación",
-      "line": "l2",
+      "line": "l1",
       "source": "OpenAlex"
     },
     {
@@ -104,7 +104,7 @@
       "url": "https://doi.org/10.15503/jecs2026.1.879.911",
       "doi": "10.15503/jecs2026.1.879.911",
       "type": "Artículo científico",
-      "line": "l4",
+      "line": "l1",
       "source": "OpenAlex"
     },
     {
@@ -150,7 +150,7 @@
       "venue": "Institutional Repository University of Extremadura (University of Extremadura)",
       "url": "http://hdl.handle.net/10662/26110",
       "type": "Tesis",
-      "line": "l1",
+      "line": "l3",
       "source": "OpenAlex"
     },
     {
@@ -437,7 +437,7 @@
       "url": "https://doi.org/10.17398/1695-288x.23.1.107",
       "doi": "10.17398/1695-288x.23.1.107",
       "type": "Artículo científico",
-      "line": "l1",
+      "line": "l3",
       "source": "OpenAlex"
     },
     {
@@ -496,6 +496,17 @@
     },
     {
       "year": 2023,
+      "title": "Tabla 1.docx",
+      "authors": "Mario Cerezo-Pizarro; María Rosa Fernández Sánchez; Alain Presentación Muñoz",
+      "venue": "Figshare",
+      "url": "https://doi.org/10.6084/m9.figshare.24885012",
+      "doi": "10.6084/m9.figshare.24885012",
+      "type": "Conjunto de datos",
+      "line": "l2",
+      "source": "OpenAlex"
+    },
+    {
+      "year": 2023,
       "title": "Tabla 1. Reseñas",
       "authors": "Mario Cerezo-Pizarro; María Rosa Fernández Sánchez; Alain Presentación Muñoz",
       "venue": "Figshare",
@@ -534,17 +545,6 @@
       "venue": "Figshare",
       "url": "https://doi.org/10.6084/m9.figshare.24885012.v2",
       "doi": "10.6084/m9.figshare.24885012.v2",
-      "type": "Conjunto de datos",
-      "line": "l2",
-      "source": "OpenAlex"
-    },
-    {
-      "year": 2023,
-      "title": "Tabla 3. Final games",
-      "authors": "Mario Cerezo-Pizarro; María Rosa Fernández Sánchez; Alain Presentación Muñoz",
-      "venue": "Figshare",
-      "url": "https://doi.org/10.6084/m9.figshare.24885012",
-      "doi": "10.6084/m9.figshare.24885012",
       "type": "Conjunto de datos",
       "line": "l2",
       "source": "OpenAlex"

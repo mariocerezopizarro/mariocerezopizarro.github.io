@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T05:31:26.486872Z",
+  "generated_at": "2026-10-19T05:41:12.037569Z",
   "orcid": "0000-0001-8097-0573",
   "sources": {
     "OpenAlex": {
@@ -92,7 +92,7 @@
       "authors": "Mario Cerezo-Pizarro",
       "venue": "Educatio Siglo XXI",
       "url": "https://revistas.um.es/educatio/article/view/704501",
-      "type": "Reseña",
+      "type": "Artículo científico",
       "line": "l2",
       "source": "OpenAlex"
     },
@@ -454,7 +454,7 @@
     {
       "year": 2024,
       "title": "Videojuegos educativos: mejorando el aprendizaje y el desarrollo... en la educación infantil",
-      "authors": "Jorge Guerra; Jairo Simão Santana Melo; Mario Cerezo-Pizarro; Isabel Porras; Alain Presentación-Muñoz",
+      "authors": "Jorge Guerra; Jairo Simão Santana Melo; Mario Cerezo-Pizarro; Isabel Porras; Alain Presentación Muñoz",
       "venue": "Dykinson eBooks",
       "url": "https://doi.org/10.14679/2871",
       "doi": "10.14679/2871",

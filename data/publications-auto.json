@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T05:44:13.623343Z",
+  "generated_at": "2026-11-02T13:28:44.880864Z",
   "orcid": "0000-0001-8097-0573",
   "sources": {
     "OpenAlex": {
@@ -29,7 +29,7 @@
       "authors": "Mario Cerezo-Pizarro",
       "venue": "Hispana",
       "url": "http://hdl.handle.net/10201/218161",
-      "type": "Artículo científico",
+      "type": "Reseña",
       "line": "l2",
       "source": "OpenAlex"
     },
@@ -82,7 +82,7 @@
       "venue": "RELATEC Revista Latinoamericana de Tecnología Educativa, 25(1), 119–120",
       "url": "https://doi.org/10.17398/1695-288x.25.1.119",
       "doi": "10.17398/1695-288x.25.1.119",
-      "type": "Artículo científico",
+      "type": "Reseña",
       "line": "l2",
       "source": "OpenAlex"
     },
@@ -92,7 +92,7 @@
       "authors": "Mario Cerezo-Pizarro",
       "venue": "Educatio Siglo XXI",
       "url": "https://revistas.um.es/educatio/article/view/704501",
-      "type": "Artículo científico",
+      "type": "Reseña",
       "line": "l2",
       "source": "OpenAlex"
     },
@@ -436,7 +436,7 @@
       "venue": "RELATEC Revista Latinoamericana de Tecnología Educativa, 23(1), 107–108",
       "url": "https://doi.org/10.17398/1695-288x.23.1.107",
       "doi": "10.17398/1695-288x.23.1.107",
-      "type": "Artículo científico",
+      "type": "Reseña",
       "line": "l3",
       "source": "OpenAlex"
     },

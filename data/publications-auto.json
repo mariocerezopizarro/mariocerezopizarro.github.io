@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-02T13:28:44.880864Z",
+  "generated_at": "2026-11-09T13:52:41.222401Z",
   "orcid": "0000-0001-8097-0573",
   "sources": {
     "OpenAlex": {
       "ok": true,
-      "count": 30
+      "count": 29
     },
     "Zenodo": {
       "ok": true,
@@ -62,6 +62,16 @@
       "venue": "DOAJ (DOAJ: Directory of Open Access Journals)",
       "url": "https://doaj.org/article/0df52e38238847049791f93114cb5802",
       "type": "Reseña",
+      "line": "l2",
+      "source": "OpenAlex"
+    },
+    {
+      "year": 2026,
+      "title": "Jesús Rodríguez Rodríguez, Manuel Area Moreira y Ángel San Martín Alonso (Coords.)\"Infancia y transformación digital de la educación: miradas diversas\"",
+      "authors": "Mario Cerezo-Pizarro",
+      "venue": "Institutional Repository University of Extremadura (University of Extremadura)",
+      "url": "https://hdl.handle.net/10662/42986",
+      "type": "Artículo científico",
       "line": "l2",
       "source": "OpenAlex"
     },
